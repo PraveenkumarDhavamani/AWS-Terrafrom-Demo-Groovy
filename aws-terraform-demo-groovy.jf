@@ -123,6 +123,17 @@ stage('User Confirmation') {
 
 stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
+		sh 'sudo /opt/terraform init ./terraform'
+		sh 'sudo /opt/terraform plan ./terraform'
+		sh 'sudo /opt/terraform apply ./terraform'
+		//sh 'sudo /opt/terraform plan ./terraform'
 }	
+
+stage('AWS Terraform - CICD Pileline End Successfully') {
+
+	println "AWS - CICD Pileline End Successfully"
+	
+} 
+
 
 }
