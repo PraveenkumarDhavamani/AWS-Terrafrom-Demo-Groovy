@@ -9,8 +9,6 @@
 #==============================================================================
 
 
-node (params.nodeSelector) {
-
 //Inputparamter Checks 
 
 stage('Check Input Parameters'){	
@@ -129,7 +127,7 @@ stage('User Confirmation') {
 stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: "oc --config=${env.OC_CFG} -n ${params.openShiftProject}  delete pods --all"
 	}	
-}
+
 		
 	
 	
