@@ -11,7 +11,7 @@
 */
 
 //Inputparamter Checks 
-
+node(params.nodeSelector) {
 stage('Check Input Parameters'){	
 	def missingParams = false
 	
@@ -105,17 +105,12 @@ stage('Initialisation'){
 	        " TerrafromAction :                ${params.TerrafromAction}\n" +			
 			" GITAccessGroovyCredentials :     ${params.GITAccessGroovyCredentials}\n" 
 		
-	
-	//TRACKING THE DATA CENTER 
-	//def url = 'A'
-	//if (params.datacenter.startWith('https://console-A')) {
-	//	url = 'B'
-	//}
+
 	
 	//DISPLAY THE BUILD DETAILS IN THE JENKINS CONSOLE 
 	currentBuild.displayName ='aws-terraform-demo-praveen ->' + params.DataCenter + ":" + params.Environment
 	
-}
+ }
 
 
 stage('User Confirmation') {
@@ -129,3 +124,5 @@ stage('User Confirmation') {
 stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: "pwd;ls -lrt"
 }	
+
+}
