@@ -108,7 +108,7 @@ stage('Initialisation'){
 
 	
 	//DISPLAY THE BUILD DETAILS IN THE JENKINS CONSOLE 
-	currentBuild.displayName ='aws-terraform-demo-praveen ->' + params.DataCenter + ":" + params.Environment
+	currentBuild.displayName ='aws-terraform-demo-praveen : DataCenter->' + params.DataCenter + ":" + params.Environment
 	
  }
 
