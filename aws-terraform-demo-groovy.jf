@@ -122,7 +122,7 @@ stage('User Confirmation') {
 } 
 
 stage('AWS Resource Provisioning - Terraform Execution') {
-		sh script: "pwd;ls -lrt;cd terraform;ls -lrt;cd ..;ls -lrt"
+		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
 		sh script: "sudo /opt/terraform init apache.tf"
 		sh script: "sudo /opt/terraform plan apache.tf"
 		//sh 'sudo /opt/terraform apply apache.tf'
