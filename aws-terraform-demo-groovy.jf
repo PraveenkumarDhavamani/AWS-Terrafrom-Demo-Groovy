@@ -69,13 +69,14 @@ stage('Check Input Parameters'){
 		println "No TerrafromAction parameter value set"
 		missingParams = true
 	}
-	
-}
+
 
 	if(missingParams){
 	println "There are one or more madatory parameter missing"
 	currentBuild.result = 'FAIL'
 	return
+   }
+
 }
 
 
