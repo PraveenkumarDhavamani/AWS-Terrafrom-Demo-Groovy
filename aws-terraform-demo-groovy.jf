@@ -12,7 +12,7 @@
 
 //Inputparamter Checks 
 node(params.nodeSelector) {
-stage('Check Input Parameters'){	
+stage('Declarative Pipeline : Input Parameters Check'){	
 	def missingParams = false
 	
 	if(params.Environment==null) {
@@ -123,15 +123,15 @@ stage('User Confirmation') {
 
 stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
-		sh script: "sudo /opt/terraform init apache.tf"
-		sh script: "sudo /opt/terraform plan apache.tf"
+		//sh script: "sudo /opt/terraform init apache.tf"
+		//sh script: "sudo /opt/terraform plan apache.tf"
 		//sh 'sudo /opt/terraform apply apache.tf'
 		//sh 'sudo /opt/terraform plan ./terraform'
 }	
 
-stage('AWS Terraform - CICD Pileline End Successfully') {
+stage('AWS Terraform - CICD Pileline Execution End') {
 
-	println "AWS - CICD Pileline End Successfully"
+	println "AWS - CICD Pileline Completed Successfully, Kindly check the Jenkins Console Log"
 	
 } 
 
