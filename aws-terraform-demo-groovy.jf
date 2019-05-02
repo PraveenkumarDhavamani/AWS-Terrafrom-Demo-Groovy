@@ -115,14 +115,14 @@ stage('Initialisation'){
 
 stage('User Confirmation') {
 	if (params.Environment.trim().equals('')){
-		input message: "Please confirm that you wish to create the aws EC2 Instance in params.Environment ?\n\n", ok: "Proceed"
+		input message: "Please confirm that you wish to create the aws EC2 Instance in ${params.Environment} ?\n\n", ok: "Proceed"
 	}else {
-		input message: "Please confirm that you wish to create the aws EC2 Instance in params.Environment ?\n\n", ok: "Proceed"
+		input message: "Please confirm that you wish to create the aws EC2 Instance in ${params.Environment} ?\n\n", ok: "Proceed"
 	}
 } 
 
 stage('AWS Resource Provisioning - Terraform Execution') {
-		sh script: "pwd;ls -lrt;cd AWS-Terrafrom-Demo;ls -lrt"
+		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
 		sh script: "sudo /opt/terraform init"
 		sh script: "sudo /opt/terraform plan"
 		sh script: "sudo /opt/terraform apply"
