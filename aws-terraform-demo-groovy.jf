@@ -125,9 +125,9 @@ stage('User Confirmation') {
 stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: 'pwd;ls -lrt;cd terraform;ls -lrt'
 		sh script: '/opt/terraform init -input=false'
-		sh script: 'sleep 3000'
+		sh script: 'sleep 30'
 		sh script: '/opt/terraform plan -out=tfplan -input=false'
-		sh script: 'sleep 3000'
+		sh script: 'sleep 30'
 		sh script: '/opt/terraform apply -input=false tfplan -auto-approve'
 }	
 
