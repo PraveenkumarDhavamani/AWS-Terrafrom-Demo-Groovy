@@ -127,17 +127,7 @@ stage('AWS Resource Provisioning - Terraform Execution') {
 	
 	println "TerrafromAction is - ${apply}"
 	
-	if(${params.TerrafromAction}==${action}) {
-		println "TerrafromAction is apply"
-        sh script: "/opt/terraform init ./terraform"
-		sh script: "sleep 30"
-		sh script: "/opt/terraform ${params.TerrafromAction} ./terraform"
-		sh script: "sleep 30"
-		sh script: "/opt/terraform ${params.TerrafromAction} -auto-approve ./terraform"
-	}else{
-		sh script: "/opt/terraform ${params.TerrafromAction} -force ./terraform"
-	}
-	//sh  script: 'rm -rf terraform'
+
 }
 
 stage('AWS Terraform - CICD Pileline Execution End') {
