@@ -127,7 +127,7 @@ stage('AWS Resource Provisioning - Terraform Execution') {
 			println "TerrafromAction is apply"
 			sh script: "/opt/terraform init ./terraform"
 			sh script: "sleep 30"
-			sh script: "/opt/terraform ${params.TerrafromAction} ./terraform"
+			sh script: "/opt/terraform plan ./terraform"
 			sh script: "sleep 30"
 			sh script: "/opt/terraform ${params.TerrafromAction} -auto-approve ./terraform"
 		}else{
