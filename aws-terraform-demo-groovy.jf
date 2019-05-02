@@ -126,9 +126,9 @@ stage('AWS Resource Provisioning - Terraform Execution') {
 		sh script: 'pwd;ls -lrt;cd terraform;ls -lrt;cd ..'
 		sh script: '/opt/terraform init ./terraform'
 		sh script: 'sleep 30'
-		sh script: '/opt/terraform plan ./terraform -out=tfplan'
+		sh script: '/opt/terraform plan ./terraform'
 		sh script: 'sleep 30'
-		sh script: '/opt/terraform apply ./terraform tfplan -auto-approve'
+		sh script: '/opt/terraform apply ./terraform -auto-approve'
 }	
 
 stage('AWS Terraform - CICD Pileline Execution End') {
