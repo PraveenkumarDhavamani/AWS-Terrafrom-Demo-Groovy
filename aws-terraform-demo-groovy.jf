@@ -82,7 +82,7 @@ stage('Declarative Pipeline : Input Parameters Check'){
 
 stage('Initialisation'){
 	
-	sh  script: 'cd /var/lib/jenkins/workspace/; sudo rm -rf AWS-Terraform-Demo'
+	sh  script: 'cd /var/lib/jenkins/workspace/; sudo rm -rf *'
 	
 	println "Checkout the GIT repo using below command"
 	checkout scm
