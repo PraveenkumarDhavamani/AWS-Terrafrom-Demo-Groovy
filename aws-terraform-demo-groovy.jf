@@ -125,7 +125,9 @@ stage('AWS Resource Provisioning - Terraform Execution') {
  
     def action = apply
 	
-	if(params.TerrafromAction==${action}) {
+	println "TerrafromAction is - ${apply}"
+	
+	if(params.TerrafromAction==action) {
 		println "TerrafromAction is apply"
         sh script: "/opt/terraform init ./terraform"
 		sh script: "sleep 30"
