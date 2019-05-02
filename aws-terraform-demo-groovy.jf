@@ -123,7 +123,7 @@ stage('AWS Resource Provisioning - Terraform Execution') {
 		
 	sh script: "pwd;ls -lrt;cd terraform;ls -lrt;cd .."
 	
-	if(${params.TerrafromAction}=="apply") {
+	if(params.TerrafromAction=="apply") {
 			println "TerrafromAction is apply"
 			sh script: "/opt/terraform init ./terraform"
 			sh script: "sleep 30"
