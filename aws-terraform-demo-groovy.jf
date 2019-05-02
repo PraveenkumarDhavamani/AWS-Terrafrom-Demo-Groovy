@@ -122,12 +122,12 @@ stage('User Confirmation') {
 } 
 
 stage('AWS Resource Provisioning - Terraform Execution') {
-		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
-		sh script: "sudo /opt/terraform init -input=false"
-		sh script: "sleep 3000"
-		sh script: "sudo /opt/terraform plan -out=tfplan -input=false"
-		sh script: "sleep 3000"		
-		sh script: "sudo /opt/terraform apply -input=false tfplan -auto-approve"
+		sh script: 'pwd;ls -lrt;cd terraform;ls -lrt'
+		sh script: 'sudo /opt/terraform init -input=false'
+		sh script: 'sleep 3000'
+		sh script: 'sudo /opt/terraform plan -out=tfplan -input=false'
+		sh script: 'sleep 3000'
+		sh script: 'sudo /opt/terraform apply -input=false tfplan -auto-approve'
 }	
 
 stage('AWS Terraform - CICD Pileline Execution End') {
