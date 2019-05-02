@@ -122,11 +122,10 @@ stage('User Confirmation') {
 } 
 
 stage('AWS Resource Provisioning - Terraform Execution') {
-		sh script: "pwd;ls -lrt;cd terraform;ls -lrt"
-		//sh script: "sudo /opt/terraform init apache.tf"
-		//sh script: "sudo /opt/terraform plan apache.tf"
-		//sh 'sudo /opt/terraform apply apache.tf'
-		//sh 'sudo /opt/terraform plan ./terraform'
+		sh script: "pwd;ls -lrt;cd AWS-Terrafrom-Demo;ls -lrt"
+		sh script: "sudo /opt/terraform init"
+		sh script: "sudo /opt/terraform plan"
+		sh script: "sudo /opt/terraform apply"
 }	
 
 stage('AWS Terraform - CICD Pileline Execution End') {
